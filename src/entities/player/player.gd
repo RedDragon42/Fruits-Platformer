@@ -24,8 +24,8 @@ func get_input():
 	if velocity.y != 0: animation.play("jump")
 	elif velocity.x != 0: animation.play("walk")
 	elif velocity == Vector2(0, 0):
-		pass
-#		animation.play("idle")
+		sprite.hframes = 11;
+		animation.play("idle")
 
 func _physics_process(delta):
 	get_input();
@@ -34,6 +34,3 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed;
-	elif velocity == Vector2(0, 0):
-		sprite.hframes = 11;
-		animation.play("idle")

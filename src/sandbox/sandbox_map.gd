@@ -17,3 +17,6 @@ func _set_up_camera():
 #	camera.set_limit(2, rect.end.x * 16 - 16);
 #	camera.set_limit(3, rect.end.y * 16);
 	camera_target = $Player;
+
+func fruit_collected():
+	$HUD.add_fruit();

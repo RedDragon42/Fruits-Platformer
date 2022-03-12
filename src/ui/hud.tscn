@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/menu/text/text (white) (8x10).png" type="Texture" id=4]
+[ext_resource path="res://src/ui/hud.gd" type="Script" id=5]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 48, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+hframes = 10
+vframes = 5
+frame = 30
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 28, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+hframes = 10
+vframes = 5
+frame = 30
