@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://src/objects/traps/saw.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/traps/spikes/idle.png" type="Texture" id=2]
@@ -12,8 +12,10 @@
 [ext_resource path="res://assets/background/brown.png" type="Texture" id=10]
 [ext_resource path="res://assets/background/pink.png" type="Texture" id=11]
 [ext_resource path="res://src/entities/player/player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/entities/enemies/slime.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/sandbox/sandbox_map.gd" type="Script" id=14]
 [ext_resource path="res://assets/enemies/bluebird/flying (32x32).png" type="Texture" id=15]
+[ext_resource path="res://src/objects/gimmicks/trampoline.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/entities/enemies/turtle.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/musics/green_greens.mp3" type="AudioStream" id=20]
 [ext_resource path="res://src/objects/fruit.tscn" type="PackedScene" id=23]
@@ -839,8 +841,17 @@ texture = ExtResource( 8 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="KinematicBody2D" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 141, 3 )
+[node name="Turtle" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 526, -13 )
+
+[node name="Turtle2" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 593, -13 )
+
+[node name="Turtle3" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 490, -13 )
+
+[node name="Turtle4" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 142, 3 )
 
 [node name="Traps" type="Node2D" parent="."]
 
@@ -864,15 +875,6 @@ position = Vector2( 1344, -8 )
 rotation = 1.5708
 texture = ExtResource( 7 )
 
-[node name="Spikes0" type="Sprite" parent="Traps"]
-position = Vector2( 584, -8 )
-texture = ExtResource( 2 )
-
-[node name="Spikes1" type="Sprite" parent="Traps"]
-position = Vector2( 952, -120 )
-rotation = 1.5708
-texture = ExtResource( 2 )
-
 [node name="Spikes2" type="Sprite" parent="Traps"]
 position = Vector2( 1384, 8 )
 rotation = -1.5708
@@ -886,9 +888,6 @@ texture = ExtResource( 9 )
 position = Vector2( 1368, -136 )
 texture = ExtResource( 9 )
 
-[node name="Saw0" parent="Traps" instance=ExtResource( 1 )]
-position = Vector2( 640, -32 )
-
 [node name="Saw1" parent="Traps" instance=ExtResource( 1 )]
 position = Vector2( 1064, -240 )
 
@@ -900,6 +899,12 @@ position = Vector2( 520, -72 )
 
 [node name="Fruit2" parent="Fruits" instance=ExtResource( 23 )]
 position = Vector2( 536, -72 )
+
+[node name="Fruit11" parent="Fruits" instance=ExtResource( 23 )]
+position = Vector2( 265, -26 )
+
+[node name="Fruit12" parent="Fruits" instance=ExtResource( 23 )]
+position = Vector2( 281, -26 )
 
 [node name="Fruit3" parent="Fruits" instance=ExtResource( 23 )]
 position = Vector2( 600, -88 )
@@ -964,4 +969,9 @@ editor_draw_limits = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-autoplay = true
+
+[node name="Trampoline" parent="." instance=ExtResource( 16 )]
+position = Vector2( 661, -78 )
+
+[node name="Slime" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1101, -175 )

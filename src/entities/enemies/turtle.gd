@@ -22,7 +22,7 @@ func _change_state() -> void:
 func _on_body_entered(body) -> void:
 	if body.name != "Player": return;
 	if state == "spike_in":
-		body.bounce(); _death();
+		body.bounce(0.8); _death();
 	else: body.hit();
 		
 func _death():
@@ -30,6 +30,7 @@ func _death():
 	$CollisionShape2D.call_deferred("set", "disabled", true);
 	anim.play("hit");
 	yield(anim, "animation_finished");
+	scale = Vector2(0.5, 0.5);
 	anim.play("desappearing");
 	yield(anim, "animation_finished");
 	queue_free();

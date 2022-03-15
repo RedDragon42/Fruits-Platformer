@@ -25,7 +25,7 @@ func get_input() -> void:
 	if velocity.y != 0: anim.play("jump")
 	elif velocity.x != 0: anim.play("run")
 	elif velocity == Vector2(0, 0):
-		sprite.hframes = 11;
+#		sprite.hframes = 11;
 		anim.play("idle")
 
 func _physics_process(delta) -> void:
@@ -36,17 +36,21 @@ func _physics_process(delta) -> void:
 		if is_on_floor():
 			velocity.y = jump_speed;
 
-func bounce():
-	velocity.y = jump_speed;
+func bounce(multiplier : float):
+	velocity.y = jump_speed * multiplier;
 
 func hit():
 	pass;
 
 var characters : Array = ["mask dude", "ninja frog", "pink man", "virtual guy"];
+var current_character : String = "pink man";
 
 func _on_Timer_timeout():
-	_change_character(characters[0]);
 	characters.shuffle();
+	var idx : int = 0;
+	idx = 1 if characters[0] == current_character else 0;
+	current_character = characters[idx];
+	_change_character(current_character);
 
 
 func _change_character(character : String) -> void:
