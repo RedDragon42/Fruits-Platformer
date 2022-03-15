@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://src/objects/traps/saw.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/traps/spikes/idle.png" type="Texture" id=2]
@@ -11,14 +11,11 @@
 [ext_resource path="res://assets/traps/blocks/idle.png" type="Texture" id=9]
 [ext_resource path="res://assets/background/brown.png" type="Texture" id=10]
 [ext_resource path="res://assets/background/pink.png" type="Texture" id=11]
-[ext_resource path="res://src/entities/player/player.gd" type="Script" id=12]
-[ext_resource path="res://assets/main characters/ninja frog/idle (32x32).png" type="Texture" id=13]
+[ext_resource path="res://src/entities/player/player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/sandbox/sandbox_map.gd" type="Script" id=14]
 [ext_resource path="res://assets/enemies/bluebird/flying (32x32).png" type="Texture" id=15]
 [ext_resource path="res://src/entities/enemies/turtle.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/musics/green_greens.mp3" type="AudioStream" id=20]
-[ext_resource path="res://assets/main characters/ninja frog/jump (32x32).png" type="Texture" id=21]
-[ext_resource path="res://assets/main characters/ninja frog/run (32x32).png" type="Texture" id=22]
 [ext_resource path="res://src/objects/fruit.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/sandbox/to_delete.gd" type="Script" id=24]
 
@@ -798,170 +795,6 @@ tracks/4/keys = {
 "values": [ "flying" ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 13 )
-
-[sub_resource type="Animation" id=8]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 13 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1 ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "idle"
-length = 1.1
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 11 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 13 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "jump"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 21 ) ]
-}
-
-[sub_resource type="Animation" id=19]
-resource_name = "walk"
-length = 1.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 22 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 12 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-}
-
 [node name="SandBox" type="Node2D"]
 script = ExtResource( 14 )
 __meta__ = {
@@ -1118,24 +951,7 @@ anims/flying = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 anims/animation0 = SubResource( 7 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 0, -24 )
-script = ExtResource( 12 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, 3 )
-shape = SubResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 13 )
-hframes = 11
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-reset_on_save = false
-anims/RESET = SubResource( 8 )
-anims/idle = SubResource( 9 )
-anims/jump = SubResource( 10 )
-anims/walk = SubResource( 19 )
+[node name="Player" parent="." instance=ExtResource( 12 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
