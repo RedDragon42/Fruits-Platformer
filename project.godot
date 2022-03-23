@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Fruits Platformer"
-run/main_scene="res://src/sandbox/sandbox_map.tscn"
+run/main_scene="res://src/maps/cta_maps/cta_0.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -21,6 +21,7 @@ custom="*res://src/autoload/custom.gd"
 [display]
 
 window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
@@ -73,4 +74,5 @@ common/enable_pause_aware_picking=true
 
 2d/options/use_nvidia_rect_flicker_workaround=true
 2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0.129412, 0.121569, 0.188235, 1 )
 environment/default_environment="res://default_env.tres"

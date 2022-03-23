@@ -10,7 +10,7 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		get_node("/root/SandBox").fruit_collected();
+		get_node("/root/cta_0").fruit_collected();
 		anim.play("collected");
 		self.disconnect("body_entered", self, "_on_Area2D_body_entered");
 		var _error = anim.connect("animation_finished", self, "_on_anim_animation_finished");
